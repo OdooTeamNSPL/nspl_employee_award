@@ -1,0 +1,115 @@
+<odoo>
+    <template id="report_employee_award_document">
+        <t t-call="web.external_layout">
+            <main>
+                <t t-if="docs">
+                    <t t-foreach="docs" t-as="doc">
+                        <div class="page" style="font-family: Arial, Helvetica, sans-serif;">
+
+                            <!-- Header -->
+                            <div style="text-align: center;">
+                                <h2 style="margin: 0;">
+                                    <t t-if="doc.name">
+                                        <strong>
+                                            <t t-esc="doc.name"/>
+                                        </strong>
+                                    </t>
+                                    <t t-else="">
+                                        <strong>
+                                            <span style="display: inline-block; min-width: 100px; border-bottom: 1px solid transparent;"></span>
+                                        </strong>
+                                    </t>
+                                </h2>
+                            </div>
+
+                            <!-- Award Date -->
+                            <div style="margin-top: 30px; text-align:right;  margin-bottom: 40px;">
+                                <strong>Date :</strong>
+                                <span style="margin-left: 10px;">
+                                    <t t-if="doc.award_date">
+                                        <t t-esc="doc.award_date"/>
+                                    </t>
+                                    <t t-else="">
+                                        <span style="display: inline-block; min-width: 90px;"></span>
+                                    </t>
+                                </span>
+                            </div>
+
+                            <!-- First Row: Employee and Given By -->
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                                <div style="width: 50%;">
+                                    <strong>Employee</strong>
+                                    <span style="margin-left: 10px;">:</span>
+                                    <span style="margin-left: 10px;">
+                                        <t t-if="doc.employee_id">
+                                            <t t-esc="doc.employee_id.name"/>
+                                        </t>
+                                        <t t-else="">
+                                            <span style="display: inline-block; min-width: 200px;"></span>
+                                        </t>
+                                    </span>
+                                </div>
+                                <div style="width: 50%;">
+                                    <strong>Given By</strong>
+                                    <span style="margin-left: 10px;">:</span>
+                                    <span style="margin-left: 10px;">
+                                        <t t-if="doc.award_given_by">
+                                            <t t-esc="doc.award_given_by.name"/>
+                                        </t>
+                                        <t t-else="">
+                                            <span style="display: inline-block; min-width: 200px;"></span>
+                                        </t>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Second Row: Award Type and Amount -->
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                                <div style="width: 50%;">
+                                    <strong>Award Type</strong>
+                                    <span style="margin-left: 10px;">:</span>
+                                    <span style="margin-left: 10px;">
+                                        <t t-if="doc.award_name">
+                                            <t t-esc="doc.award_name.award_name"/>
+                                        </t>
+                                        <t t-else="">
+                                            <span style="display: inline-block; min-width: 200px;"></span>
+                                        </t>
+                                    </span>
+                                </div>
+                                <div style="width: 50%;">
+                                    <strong>Amount</strong>
+                                    <span style="margin-left: 10px;">:</span>
+                                    <span style="margin-left: 10px;">
+                                        <t t-if="doc.award_amount">
+                                            <t t-esc="doc.award_amount"/>
+                                        </t>
+                                        <t t-else="">
+                                            <span style="display: inline-block; min-width: 200px;"></span>
+                                        </t>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Description -->
+                            <div style="margin-top: 40px;">
+                                <h4 style="margin-bottom: 15px;">
+                                    <strong>Award Description</strong>
+                                </h4>
+                                <p style="line-height: 1.6;">
+                                    <t t-if="doc.description">
+                                        <t t-esc="doc.description"/>
+                                    </t>
+                                    <t t-else="">
+                                        <span style="display: inline-block; min-width: 200px;"></span>
+                                    </t>
+                                </p>
+                            </div>
+
+                        </div>
+                    </t>
+                </t>
+            </main>
+        </t>
+    </template>
+</odoo>

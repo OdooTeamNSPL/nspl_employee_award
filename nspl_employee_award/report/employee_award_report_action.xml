@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record id="action_employee_award_report" model="ir.actions.report">
+            <field name="name">Employee Award Report</field>
+            <field name="model">employee.award</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">nspl_employee_award.report_employee_award_document</field>
+            <field name="report_file">nspl_employee_award.report_employee_award_document</field>
+            <field name="print_report_name">'Employee Award - %s' % (object.employee_id.name)</field>
+            <field name="binding_model_id" ref="model_employee_award"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

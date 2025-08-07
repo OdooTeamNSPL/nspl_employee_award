@@ -1,0 +1,47 @@
+<odoo>
+    <record id="view_award_type_form" model="ir.ui.view">
+        <field name="name">award.type.form</field>
+        <field name="model">award.type</field>
+        <field name="arch" type="xml">
+            <form string="Employee Award">
+                <sheet>
+                    <field name="award_name"/>
+                </sheet>
+            </form>
+        </field>
+
+    </record>
+
+    <record id="view_award_type_tree" model="ir.ui.view">
+        <field name="name">award.type.tree</field>
+        <field name="model">award.type</field>
+        <field name="arch" type="xml">
+            <list string="Employee Award">
+
+                <field name="award_name"/>
+
+            </list>
+        </field>
+    </record>
+
+    <record id="action_type_award" model="ir.actions.act_window">
+        <field name="name">Award Type</field>
+        <field name="res_model">award.type</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="view_award_type_tree"/>
+    </record>
+
+
+    <menuitem id="menu_award_type"
+              name="Employee Award"
+              parent="hr.menu_hr_root"
+              sequence="10"/>
+
+    <menuitem id="menu_award_type_list"
+              name="Award Type"
+              parent="menu_award_type"
+              action="action_type_award"
+              sequence="5"/>
+
+
+</odoo>

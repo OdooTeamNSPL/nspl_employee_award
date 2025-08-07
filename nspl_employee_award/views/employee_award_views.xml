@@ -1,0 +1,63 @@
+<odoo>
+    <record id="view_employee_award_form" model="ir.ui.view">
+        <field name="name">employee.award.form</field>
+        <field name="model">employee.award</field>
+        <field name="arch" type="xml">
+            <form string="Employee Award">
+                <sheet>
+                    <div style="font-size: 2em; font-weight: normal;">
+                        <field name="name" class="o_text_overflow" placeholder="e.g. Employee Award"/>
+                    </div>
+
+                    <group>
+                        <group>
+                            <field name="employee_id"/>
+                            <field name="award_name"/>
+                            <field name="award_given_by"/>
+                        </group>
+                        <group>
+                            <field name="award_date"/>
+                            <field name="award_amount"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Award Details">
+                            <field name="description" widget="text"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_employee_award_tree" model="ir.ui.view">
+        <field name="name">employee.award.tree</field>
+        <field name="model">employee.award</field>
+        <field name="arch" type="xml">
+            <list string="Employee Award">
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="award_name"/>
+                <field name="award_given_by"/>
+                <field name="award_date"/>
+                <field name="award_amount"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_employee_award_form" model="ir.actions.act_window">
+        <field name="name">Employee Award</field>
+        <field name="res_model">employee.award</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+
+    <menuitem id="menu_award_type" name="Employee Award" parent="hr.menu_hr_root" sequence="10"/>
+
+    <menuitem id="menu_employee_award_form"
+              name="Employee Awards"
+              parent="menu_award_type"
+              action="action_employee_award_form"
+              sequence="10"/>
+</odoo>
