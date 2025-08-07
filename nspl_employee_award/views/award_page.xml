@@ -1,0 +1,23 @@
+<odoo>
+    <record id="view_employee_form_inherit_award" model="ir.ui.view">
+        <field name="name">hr.employee.form.award</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/notebook" position="inside">
+                <page string="Awards">
+                    <field name="award_ids">
+                        <tree editable="bottom">
+                            <field name="name"/>
+                            <field name="award_date"/>
+                            <field name="award_name"/>
+                            <field name="award_given_by"/>
+                            <field name="award_amount"/>
+                        </tree>
+
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
