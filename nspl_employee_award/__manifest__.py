@@ -1,6 +1,6 @@
 {
     'name': 'Employee Award Management',
-    'version': '18.0',
+    'version': '19.0.1',
     'summary':
         """
     The Employee Award Management app in Odoo Simplifies tracking and managing employee awards with detailed records, reporting, and print-ready documentation.

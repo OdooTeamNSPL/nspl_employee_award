@@ -5,8 +5,9 @@
         <field name="arch" type="xml">
             <form string="Employee Award">
                 <sheet>
-                    <div style="font-size: 2em; font-weight: normal;">
-                        <field name="name" class="o_text_overflow" placeholder="e.g. Employee Award"/>
+                    <div style="font-size: 2em; font-weight: normal; width:50%">
+                        <field name="name" class="o_text_overflow" style="width: 50%;"
+                               placeholder="e.g. Employee Award"/>
                     </div>
 
                     <group>
